@@ -34,6 +34,8 @@ public interface BookRepository extends JpaRepository<Book, Long>, JpaSpecificat
                 predicates.add(author);
             }
 
+            predicates.add(criteriaBuilder.equal(root.get("deleted"), false));
+
             return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
         }, pageable);
     }

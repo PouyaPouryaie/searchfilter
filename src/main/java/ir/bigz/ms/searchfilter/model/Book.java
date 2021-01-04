@@ -12,18 +12,13 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Book {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Book extends BaseEntity<Long> {
 
     private String title;
     private String sbn;
     private String author;
 
-    public Book(Long id, String title, String sbn, String author) {
-        this.id = id;
+    public Book( String title, String sbn, String author) {
         this.title = title;
         this.sbn = sbn;
         this.author = author;

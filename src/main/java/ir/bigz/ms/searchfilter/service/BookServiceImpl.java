@@ -24,8 +24,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public Book getBook(long bookId) {
-        Book book = bookRepository.findById(bookId).get();
-        return book;
+        return bookRepository.findById(bookId).get();
     }
 
     public Page<Book> getByFilter(int pageNumber, BookFilterRequest bookFilterRequest){
@@ -39,8 +38,7 @@ public class BookServiceImpl implements BookService{
             pageable = PageRequest.of(0, 20);
         }
 
-        Page<Book> bookByFilters = bookRepository.findBookByFilters(bookFilterRequest, pageable);
-        return bookByFilters;
+        return bookRepository.findBookByFilters(bookFilterRequest, pageable);
     }
 
     @Override
