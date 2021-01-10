@@ -1,7 +1,7 @@
-package ir.bigz.ms.searchfilter.repository;
+package ir.bigz.ms.searchfilter.book.repository;
 
-import ir.bigz.ms.searchfilter.filter.BookFilterRequest;
-import ir.bigz.ms.searchfilter.model.Book;
+import ir.bigz.ms.searchfilter.book.filter.BookFilterRequest;
+import ir.bigz.ms.searchfilter.book.model.Book;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -28,10 +28,10 @@ public interface BookRepository extends JpaRepository<Book, Long>, JpaSpecificat
                 predicates.add(title);
             }
 
-            if(!StringUtils.isEmpty(bookFilterRequest.getAuthor())){
-                Predicate author = criteriaBuilder.like(criteriaBuilder.lower(root.get("author")),
-                        "%" + bookFilterRequest.getAuthor().toLowerCase() + "%");
-                predicates.add(author);
+            if(!StringUtils.isEmpty(bookFilterRequest.getSbn())){
+                Predicate sbn = criteriaBuilder.like(criteriaBuilder.lower(root.get("sbn")),
+                        "%" + bookFilterRequest.getSbn().toLowerCase() + "%");
+                predicates.add(sbn);
             }
 
             predicates.add(criteriaBuilder.equal(root.get("deleted"), false));

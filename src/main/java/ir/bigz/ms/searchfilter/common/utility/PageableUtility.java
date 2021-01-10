@@ -1,4 +1,4 @@
-package ir.bigz.ms.searchfilter.filter;
+package ir.bigz.ms.searchfilter.common.utility;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

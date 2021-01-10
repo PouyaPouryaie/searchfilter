@@ -1,7 +1,7 @@
-package ir.bigz.ms.searchfilter.service;
+package ir.bigz.ms.searchfilter.book.service;
 
-import ir.bigz.ms.searchfilter.filter.BookFilterRequest;
-import ir.bigz.ms.searchfilter.model.Book;
+import ir.bigz.ms.searchfilter.book.filter.BookFilterRequest;
+import ir.bigz.ms.searchfilter.book.model.Book;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 

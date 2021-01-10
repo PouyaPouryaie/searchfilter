@@ -1,10 +1,9 @@
-package ir.bigz.ms.searchfilter.filter;
+package ir.bigz.ms.searchfilter.book.filter;
 
 public class BookFilterRequest {
 
     private String title;
     private String sbn;
-    private String author;
 
     public BookFilterRequest() {
     }
@@ -23,13 +22,5 @@ public class BookFilterRequest {
 
     public void setSbn(String sbn) {
         this.sbn = sbn;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 }

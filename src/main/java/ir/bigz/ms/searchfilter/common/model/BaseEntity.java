@@ -1,4 +1,4 @@
-package ir.bigz.ms.searchfilter.model;
+package ir.bigz.ms.searchfilter.common.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
