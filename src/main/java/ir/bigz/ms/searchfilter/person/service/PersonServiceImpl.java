@@ -99,9 +99,7 @@ public class PersonServiceImpl extends BaseService implements PersonService {
 
     private static <T> Page<T> listToPage(Pageable pageable, List<T> list) {
         int start = (int) pageable.getOffset();
-        int end = (start + pageable.getPageSize()) > list.size() ? list.size() : (start + pageable.getPageSize());
-        Page<T> pages = new PageImpl<T>(list.subList(start, end), pageable, list.size());
-
-        return pages;
+        int end = Math.min((start + pageable.getPageSize()), list.size());
+        return new PageImpl<T>(list.subList(start, end), pageable, list.size());
     }
 }
