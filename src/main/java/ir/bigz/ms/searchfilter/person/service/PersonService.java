@@ -15,5 +15,5 @@ public interface PersonService {
 
     void addPerson(Person person);
 
-    Page<Person> getByFilter(int pageNumber, PersonFilterRequest personFilterRequest);
+    Page<PersonDTO> getByFilter(int pageNumber, PersonFilterRequest personFilterRequest);
 }

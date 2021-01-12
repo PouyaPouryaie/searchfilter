@@ -40,7 +40,7 @@ public class PersonController {
         PersonFilterRequest personFilterRequest = new PersonFilterRequest();
         personFilterRequest.setFirstName(firstName);
         personFilterRequest.setLastName(lastName);
-        Page<Person> persons = personService.getByFilter(page, personFilterRequest);
+        Page<PersonDTO> persons = personService.getByFilter(page, personFilterRequest);
         return new ResponseEntity<>(persons, HttpStatus.ACCEPTED);
     }
 
