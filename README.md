@@ -7,4 +7,5 @@ Sample search on domain with 2 solution
 ```
 use JpaSpecificationExecutor for dynamic search on the author and book domain 
 and use CriteriaQuery on person domain
+add validation and dynamic messageing for validation-failed
 ```
