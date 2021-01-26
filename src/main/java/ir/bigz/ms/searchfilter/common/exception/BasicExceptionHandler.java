@@ -44,8 +44,9 @@ public class BasicExceptionHandler {
             MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
         for(FieldError error: ex.getBindingResult().getFieldErrors()){
-            errors.put(error.getField(), error.getField().equals("nationalCode") ?
-                    error.getDefaultMessage():
+            errors.put(error.getField(),
+                    //    old-version when not use field in message-application
+//                    error.getField().equals("nationalCode") ? error.getDefaultMessage():
                     String.format(applicationProperties.getProperty("application.message.validationError.text"),
                     applicationProperties.getProperty(error.getField()) != null ?
                             applicationProperties.getProperty(error.getField()) :
